@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Country_TIme from "./Country_TIme";
 
 export default function Clock() {
   const [time, SetTime] = useState({
@@ -7,16 +8,16 @@ export default function Clock() {
     hour: "0deg",
   });
 
-  setInterval(() => {
-    const date = new Date();
-    SetTime({
-      sec: `${(date.getSeconds() / 60) * 360}deg`,
-      min: `${((date.getMinutes() + date.getSeconds() / 60) / 60) * 360}deg`,
-      hour: `${
-        (((date.getHours() % 12) + date.getMinutes() / 60) / 12) * 360
-      }deg`,
-    });
-  }, 1000);
+  // setInterval(() => {
+  //   const date = new Date();
+  //   SetTime({
+  //     sec: `${(date.getSeconds() / 60) * 360}deg`,
+  //     min: `${((date.getMinutes() + date.getSeconds() / 60) / 60) * 360}deg`,
+  //     hour: `${
+  //       (((date.getHours() % 12) + date.getMinutes() / 60) / 12) * 360
+  //     }deg`,
+  //   });
+  // }, 1000);
 
   const numbers = [
     { num: 1, degree: 120 },
@@ -34,7 +35,7 @@ export default function Clock() {
   ];
   return (
     <>
-      <div className="w-[40%] rounded-[50%] mt-10 h-[550px] bg-slate-800 flex justify-center items-center">
+      <div className="w-[90vw] rounded-[5%] mt-10 h-[80vh]  bg-slate-800 flex justify-around items-center">
         <div className="clock w-[500px] h-[500px] shadow-2xl shadow-black bg-slate-900 rounded-[50%] flex items-center ">
           {numbers.map((items) => {
             return (
@@ -66,7 +67,8 @@ export default function Clock() {
             className="sec relative bottom-[52px] right-[251px] hours w-[1%] h-[20%] rounded-[5px] bg-slate-50 opacity-[1] origin-bottom"
             style={{ rotate: time.hour }}></div>
         </div>
-      </div>
+        <Country_TIme/>
+        </div>
     </>
   );
 }
