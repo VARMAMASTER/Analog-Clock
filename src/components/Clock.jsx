@@ -1,20 +1,22 @@
 import React, { useState } from "react";
 
 export default function Clock() {
-    const [time,SetTime] = useState({
-        sec: "0deg",
-        min: "0deg",
-        hour: "0deg",
-    });
+  const [time, SetTime] = useState({
+    sec: "0deg",
+    min: "0deg",
+    hour: "0deg",
+  });
 
-    setInterval(() => {
-        const date = new Date();
-        SetTime({
-            sec: `${(date.getSeconds() / 60) * 360}deg`,
-            min: `${((date.getMinutes() + date.getSeconds() / 60) / 60) * 360}deg`,
-            hour: `${((date.getHours() % 12 + date.getMinutes() / 60) / 12) * 360}deg`,
-        })
-    }, 1000);
+  setInterval(() => {
+    const date = new Date();
+    SetTime({
+      sec: `${(date.getSeconds() / 60) * 360}deg`,
+      min: `${((date.getMinutes() + date.getSeconds() / 60) / 60) * 360}deg`,
+      hour: `${
+        (((date.getHours() % 12) + date.getMinutes() / 60) / 12) * 360
+      }deg`,
+    });
+  }, 1000);
 
   const numbers = [
     { num: 1, degree: 120 },
@@ -32,8 +34,8 @@ export default function Clock() {
   ];
   return (
     <>
-      <div className="w-[100%] mt-10 h-[600px] bg-slate-800 flex justify-center items-center">
-        <div className="clock w-[500px] h-[500px] bg-slate-900 rounded-[50%] flex items-center ">
+      <div className="w-[40%] rounded-[50%] mt-10 h-[550px] bg-slate-800 flex justify-center items-center">
+        <div className="clock w-[500px] h-[500px] shadow-2xl shadow-black bg-slate-900 rounded-[50%] flex items-center ">
           {numbers.map((items) => {
             return (
               <div
@@ -41,11 +43,13 @@ export default function Clock() {
                 style={{
                   transform: `rotate(${items.degree}deg)`,
                 }}>
-                <span
-                  className=" inline bg-cyan-400 border-2 w-[20px] border-solid border-red-800 rounded-[50%]"
-                  style={{ transform: `rotate(${items.degree}deg)` }}>
-                  {/* {items.num} */}📍
-                </span>
+                <div
+                  className=" text-cyan-400 inline-block"
+                  style={{
+                    transform: `rotate(-${items.degree}deg)`,
+                  }}>
+                  {items.num}
+                </div>
               </div>
             );
           })}
