@@ -5,7 +5,7 @@ export default function Navbar({state}) {
 
   const Toggle_Country = ()=>{
     console.log(India);
-    if(India==true){
+    if(India===true){
       SetNational(false);
       state(false);
     }else{

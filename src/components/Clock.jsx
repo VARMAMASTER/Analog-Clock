@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Country_TIme from "./Country_TIme";
+import CountryTIme from "./CountryTIme";
 import AnalogClock from "./AnalogClock";
 import Navbar from "./navbar";
 export default function Clock() {
@@ -8,7 +8,7 @@ export default function Clock() {
     <>
     <Navbar state = {setnat}/>
       <div className="w-[90vw] font-butto rounded-[5%] mt-10 h-[80vh]  bg-slate-800 flex justify-around items-center">
-      {ind?<AnalogClock/>:<Country_TIme/>}
+      {ind?<AnalogClock/>:<CountryTIme/>}
       </div>
     </>
   );

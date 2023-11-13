@@ -1,6 +1,6 @@
 import React,{useState}from "react";
 import axios from "axios";
-export default function Country_TIme() {
+export default function CountryTIme() {
     const [time,settime] = useState({
       hour:"",
       min:"",
@@ -50,7 +50,10 @@ export default function Country_TIme() {
              
   return (
     <>
-    <div className="p-[20px] font-Orbitron flex items-center justify-around digital w-[40%] h-[50%] bg-black rounded-[20px] border-[2px] border-solid border-red-600 shadow-2xl shadow-blue-900 ">
+    <div className="flex flex-col ">
+
+    <div className="text-red-800 ont-Orbitron text-[35px]">Select a country to display the Time</div>
+    <div className="p-[20px] font-Orbitron flex items-center justify-around digital w-[80%] h-[50%] bg-black rounded-[20px] border-[2px] border-solid border-red-600 shadow-2xl shadow-blue-900 ">
     <div className="text-red-800 ont-Orbitron text-[90px] ">
     {time.hour}
     </div>
@@ -61,6 +64,8 @@ export default function Country_TIme() {
     {time.min}
     </div>
     </div>
+    </div>
+
       <div className="w-[40vw] p-10 h-[70vh] flex flex-wrap overflow-auto justify-between border-[3px] border-solid rounded-[20px] border-cyan-400">
         {Countries.map((items) => {
           return <button onClick={()=>{
