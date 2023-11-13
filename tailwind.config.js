@@ -4,7 +4,10 @@ module.exports = {
   theme: {
     extend: {
       fontFamily:{
-        butto:["Nunito Sans"]
+        butto:["Nunito Sans"],
+        roco:["Roboto Condensed"],
+        Satisfy:["Satisfy"],
+        Orbitron:["Orbitron"],
       }
     },
   },

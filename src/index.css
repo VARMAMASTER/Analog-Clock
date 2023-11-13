@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Satisfy&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
